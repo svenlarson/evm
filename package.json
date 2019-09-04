@@ -11,9 +11,8 @@
     "test": "mocha -r ts-node/register ./tests/index.ts",
     "prepublishOnly": "npm run clean && npm run build:prod",
     "clean": "rimraf ./lib",
-    "build": "npm run build:hashes && webpack",
+    "build": "webpack",
     "build:prod": "cross-env NODE_ENV=production npm run build",
-    "build:hashes": "ts-node ./scripts/build.ts",
     "prettier:diff": "prettier --write --config ./.prettierrc --list-different 'src/**/*.ts'"
   },
   "repository": {
@@ -63,7 +62,6 @@
     "tslint-microsoft-contrib": "6.0.0",
     "tslint-no-unused-expression-chai": "0.1.4",
     "typescript": "3.2.2",
-    "web3": "1.0.0-beta.37",
     "webpack": "4.28.3",
     "webpack-cli": "3.1.2",
     "webpack-merge": "4.1.5",
@@ -76,7 +74,6 @@
       "git add"
     ],
     "*.json": [
-      "npm run build:hashes",
       "git add"
     ]
   },
