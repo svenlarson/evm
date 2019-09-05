@@ -201,8 +201,8 @@ export default class EVM {
         if (opcode !== undefined) {
             fs.appendFileSync(
                 logname,
-                '' +
-                    pc +
+                '0x' +
+                    pc.toString(16) +
                     ' ' +
                     opcode.name +
                     ' ' +
