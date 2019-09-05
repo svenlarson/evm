@@ -204,7 +204,7 @@ export class JUMPI {
         } else if (this.valid) {
             return 'if' + stringify(this.condition) + ' goto(' + stringify(this.location) + ');';
         } else {
-            console.log(this);
+            // console.log(this);
             return "revert(\"Bad jump destination\");";
         }
     }
@@ -214,9 +214,9 @@ export default (opcode: Opcode, state: EVM): void => {
     const jumpLocation = state.stack.pop();
     const jumpCondition = state.stack.pop();
     const opcodes = state.getOpcodes();
-    console.log(jumpLocation);
-    console.log(state.conditions);
-    console.log('-');
+    // console.log(jumpLocation);
+    // console.log(state.conditions);
+    // console.log('-');
     if (!BigNumber.isInstance(jumpLocation)) {
         state.halted = true;
         state.instructions.push(new JUMPI(jumpCondition, jumpLocation));
@@ -245,6 +245,7 @@ export default (opcode: Opcode, state: EVM): void => {
                 const functionClone: any = state.clone();
                 functionClone.pc = jumpIndex;
                 const functionCloneTree = functionClone.parse();
+                console.log('New top level function #1: ' + jumpCondition.hash);
                 state.functions[jumpCondition.hash] = new TopLevelFunction(
                     functionCloneTree,
                     jumpCondition.hash,
@@ -323,6 +324,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     trueCloneTree.map((item: any) => stringify(item)).join('') ===
                         falseCloneTree.map((item: any) => stringify(item)).join('')
                 ) {
+                    console.log('New top level function #2 (fallback?)');
                     state.functions[''] = new TopLevelFunction(
                         trueCloneTree,
                         '',

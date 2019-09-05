@@ -29,6 +29,22 @@ export class JUMP {
     }
 }
 
+export class FUNCTIONCALL {
+    readonly name: string;
+    readonly location: string;
+    readonly functionname: string;
+
+    constructor(functionname: string, location: any) {
+        this.name = 'FUNCTIONCALL';
+        this.functionname = functionname;
+        this.location = location;
+    }
+
+    toString() {
+        return this.functionname + '(' + this.location + ')';
+    }
+}
+
 export default (opcode: Opcode, state: EVM): void => {
     const jumpLocation = state.stack.pop();
     if (!BigNumber.isInstance(jumpLocation)) {
@@ -51,8 +67,55 @@ export default (opcode: Opcode, state: EVM): void => {
                     jumpIndex >= 0 &&
                     jumpLocationData.name === 'JUMPDEST'
                 ) {
-                    state.jumps[opcode.pc + ':' + jumpLocation.toJSNumber()] = true;
-                    state.pc = jumpIndex;
+                    const jumpSummary =
+                        'JUMP from 0x' +
+                        opcode.pc.toString(16) +
+                        ' to 0x' +
+                        jumpLocation.toJSNumber().toString(16) +
+                        ', top stack: ' +
+                        stringify(state.stack.elements[0]);
+                    state.loglowlevel(jumpSummary);
+
+                    let jumped = false;
+                    if (state.functionInfo.list) {
+                        for (const element of state.functionInfo.list) {
+                            // check if we jump to the real entry point of a function, and if it's not the normal flow where a function
+                            // is called from the function selector.
+                            if (
+                                element.realFunctionEntry === jumpLocation.toJSNumber() &&
+                                element.normalJumpToRealEntry !== opcode.pc
+                            ) {
+                                // gather all input arguments from the stack
+                                const input: any = [];
+                                element.datatypes.foreach(() => input.push(state.stack.pop()));
+
+                                let name;
+                                if (element.name) {
+                                    name = element.name.replace(/\(.*\)/, '');
+                                } else {
+                                    name = element.hash.replace(/\(.*\)/, '');
+                                }
+
+                                const functionCall = new FUNCTIONCALL(name, input);
+                                state.loglowlevel('new functioncall: ' + name);
+                                state.loglowlevel(functionCall);
+
+                                // pop jump destination
+                                state.stack.pop();
+
+                                // push function return result
+                                state.stack.push(functionCall);
+                                jumped = true;
+                            }
+                        }
+                    } else {
+                        jumped = true;
+                    }
+
+                    if (!jumped) {
+                        state.jumps[opcode.pc + ':' + jumpLocation.toJSNumber()] = true;
+                        state.pc = jumpIndex;
+                    }
                 } else {
                     state.halted = true;
                     state.instructions.push(new JUMP(jumpLocation, true));

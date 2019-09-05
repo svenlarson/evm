@@ -1,0 +1,116 @@
+    /* "Contract":26:290  contract SumArray {... */
+  mstore(0x40, 0x80)
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x0
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "Contract":26:290  contract SumArray {... */
+  pop
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "Contract":26:290  contract SumArray {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      and(div(calldataload(0x0), 0x100000000000000000000000000000000000000000000000000000000), 0xffffffff)
+      0xbf8fc2d9
+      dup2
+      eq
+      tag_2
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "Contract":81:284  function _combineWarriors(uint256 _bla)... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_3
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_3:
+      pop
+        /* "Contract":81:284  function _combineWarriors(uint256 _bla)... */
+      tag_4
+      calldataload(0x4)
+      jump(tag_5)
+    tag_4:
+      0x40
+      dup1
+      mload
+      swap2
+      dup3
+      mstore
+      mload
+      swap1
+      dup2
+      swap1
+      sub
+      0x20
+      add
+      swap1
+      return
+    tag_5:
+        /* "Contract":168:177  uint sum_ */
+      0x0
+      dup1
+        /* "Contract":212:278  for (uint i = 0; i < _bla; i++) {... */
+    tag_7:
+        /* "Contract":233:237  _bla */
+      dup3
+        /* "Contract":229:230  i */
+      dup2
+        /* "Contract":229:237  i < _bla */
+      lt
+        /* "Contract":212:278  for (uint i = 0; i < _bla; i++) {... */
+      iszero
+      tag_8
+      jumpi
+        /* "Contract":258:267  sum_ += i */
+      swap1
+      dup2
+      add
+      swap1
+        /* "Contract":239:242  i++ */
+      0x1
+      add
+        /* "Contract":212:278  for (uint i = 0; i < _bla; i++) {... */
+      jump(tag_7)
+    tag_8:
+        /* "Contract":81:284  function _combineWarriors(uint256 _bla)... */
+      pop
+      swap2
+      swap1
+      pop
+      jump	// out
+
+    auxdata: 0xa165627a7a723058206ac3ce889723a92896bfe9f3e0e8d92b9d8c53c8b053bca5b3caa8fff89b30100029
+}

@@ -25,6 +25,8 @@ import {
     codes,
     names
 } from '../opcodes';
+import * as fs from 'fs';
+import * as util from 'util';
 
 export default class EVM {
     pc: number = 0;
@@ -43,6 +45,8 @@ export default class EVM {
     events: Event = {};
     gasUsed: number = 0;
     conditions: any = [];
+    functionInfo: any = [];
+    logdirectory: any = [];
 
     constructor(code: string | Buffer) {
         if (code instanceof Buffer) {
@@ -67,6 +71,8 @@ export default class EVM {
         clone.events = this.events;
         clone.gasUsed = this.gasUsed;
         clone.conditions = [...this.conditions];
+        clone.functionInfo = this.functionInfo;
+        clone.logdirectory = this.logdirectory;
         return clone;
     }
 
@@ -186,16 +192,46 @@ export default class EVM {
         this.events = {};
         this.gasUsed = 0;
     }
+    log(pc: number, opcode?: Opcode): void {
+        const logname = this.logdirectory + 'log.txt';
+        if (opcode !== undefined) {
+            fs.appendFileSync(logname, '==========\n');
+        }
+        fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
+        if (opcode !== undefined) {
+            fs.appendFileSync(
+                logname,
+                '' +
+                    pc +
+                    ' ' +
+                    opcode.name +
+                    ' ' +
+                    (opcode.pushData ? opcode.pushData.toString('hex') : '') +
+                    '\n'
+            );
+        }
+    }
+
+    loglowlevel(data: any): void {
+        const logname = this.logdirectory + 'log.txt';
+        fs.appendFileSync(logname, data);
+    }
 
     parse(): Instruction[] {
         if (this.instructions.length === 0) {
             const opcodes = this.getOpcodes();
             for (this.pc; this.pc < opcodes.length && !this.halted; this.pc++) {
                 const opcode = opcodes[this.pc];
+                if (this.logdirectory) {
+                    this.log(this.pc, opcode);
+                }
                 if (!(opcode.name in opcodeFunctions)) {
                     throw new Error('Unknown OPCODE: ' + opcode.name);
                 } else {
                     (opcodeFunctions as any)[opcode.name](opcode, this);
+                }
+                if (this.logdirectory) {
+                    this.log(this.pc);
                 }
             }
         }
