@@ -214,7 +214,7 @@ export default class EVM {
 
     loglowlevel(data: any): void {
         const logname = this.logdirectory + 'log.txt';
-        fs.appendFileSync(logname, data);
+        fs.appendFileSync(logname, data + '\n');
     }
 
     parse(): Instruction[] {

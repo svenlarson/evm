@@ -85,6 +85,9 @@ export default (opcode: Opcode, state: EVM): void => {
                                 element.realFunctionEntry === jumpLocation.toJSNumber() &&
                                 element.normalJumpToRealEntry !== opcode.pc
                             ) {
+                                console.log('detected function jump for function ' + element);
+                                state.loglowlevel('detected function jump for function ' + element);
+
                                 // gather all input arguments from the stack
                                 const input: any = [];
                                 element.datatypes.foreach(() => input.push(state.stack.pop()));
@@ -109,7 +112,7 @@ export default (opcode: Opcode, state: EVM): void => {
                             }
                         }
                     } else {
-                        jumped = true;
+                        jumped = false;
                     }
 
                     if (!jumped) {
