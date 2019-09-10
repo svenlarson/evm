@@ -197,7 +197,8 @@ export default class EVM {
         if (opcode !== undefined) {
             fs.appendFileSync(logname, '==========\n');
         }
-        fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
+        fs.appendFileSync(logname, 'Stack: ' + util.inspect(this.stack, {depth: null}) + '\n');
+        fs.appendFileSync(logname, 'Memory: ' + util.inspect(this.memory, {depth: null}) + '\n');
         if (opcode !== undefined) {
             fs.appendFileSync(
                 logname,
@@ -214,7 +215,7 @@ export default class EVM {
 
     loglowlevel(data: any): void {
         const logname = this.logdirectory + 'log.txt';
-        fs.appendFileSync(logname, data);
+        fs.appendFileSync(logname, data + '\n');
     }
 
     parse(): Instruction[] {

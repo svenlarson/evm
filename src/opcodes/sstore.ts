@@ -1,8 +1,8 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
 import { Variable } from './jumpi';
+import { LOCAL_VARIABLE } from './push';
 
 const parseMapping = (...items: any[]) => {
     const mappings: any = [];
@@ -115,10 +115,13 @@ export class SSTORE {
         this.location = location;
         this.data = data;
         this.variables = variables;
-        if (BigNumber.isInstance(this.location) && this.location.toString() in this.variables()) {
+        if (
+            LOCAL_VARIABLE.isInstance(this.location) &&
+            this.location.toString() in this.variables()
+        ) {
             this.variables()[this.location.toString()].types.push(() => this.data.type);
         } else if (
-            BigNumber.isInstance(this.location) &&
+            LOCAL_VARIABLE.isInstance(this.location) &&
             !(this.location.toString() in this.variables())
         ) {
             this.variables()[this.location.toString()] = new Variable(false, [
@@ -129,7 +132,10 @@ export class SSTORE {
 
     toString() {
         let variableName = 'storage[' + stringify(this.location) + ']';
-        if (BigNumber.isInstance(this.location) && this.location.toString() in this.variables()) {
+        if (
+            LOCAL_VARIABLE.isInstance(this.location) &&
+            this.location.toString() in this.variables()
+        ) {
             if (this.variables()[this.location.toString()].label) {
                 variableName = this.variables()[this.location.toString()].label;
             } else {
@@ -161,10 +167,10 @@ export default (opcode: Opcode, state: EVM): void => {
     if (storeLocation.name === 'SHA3') {
         const mappingItems = parseMapping(...storeLocation.items);
         const mappingLocation = mappingItems.find((mappingItem: any) =>
-            BigNumber.isInstance(mappingItem)
+            LOCAL_VARIABLE.isInstance(mappingItem)
         );
         const mappingParts = mappingItems.filter(
-            (mappingItem: any) => !BigNumber.isInstance(mappingItem)
+            (mappingItem: any) => !LOCAL_VARIABLE.isInstance(mappingItem)
         );
         if (mappingLocation && mappingParts.length > 0) {
             if (!(mappingLocation in state.mappings)) {
@@ -192,14 +198,14 @@ export default (opcode: Opcode, state: EVM): void => {
     } else if (
         storeLocation.name === 'ADD' &&
         storeLocation.left.name === 'SHA3' &&
-        BigNumber.isInstance(storeLocation.right)
+        LOCAL_VARIABLE.isInstance(storeLocation.right)
     ) {
         const mappingItems = parseMapping(...storeLocation.left.items);
         const mappingLocation = mappingItems.find((mappingItem: any) =>
-            BigNumber.isInstance(mappingItem)
+            LOCAL_VARIABLE.isInstance(mappingItem)
         );
         const mappingParts = mappingItems.filter(
-            (mappingItem: any) => !BigNumber.isInstance(mappingItem)
+            (mappingItem: any) => !LOCAL_VARIABLE.isInstance(mappingItem)
         );
         if (mappingLocation && mappingParts.length > 0) {
             if (!(mappingLocation in state.mappings)) {
@@ -226,15 +232,15 @@ export default (opcode: Opcode, state: EVM): void => {
         }
     } else if (
         storeLocation.name === 'ADD' &&
-        BigNumber.isInstance(storeLocation.left) &&
+        LOCAL_VARIABLE.isInstance(storeLocation.left) &&
         storeLocation.right.name === 'SHA3'
     ) {
         const mappingItems = parseMapping(...storeLocation.right.items);
         const mappingLocation = mappingItems.find((mappingItem: any) =>
-            BigNumber.isInstance(mappingItem)
+            LOCAL_VARIABLE.isInstance(mappingItem)
         );
         const mappingParts = mappingItems.filter(
-            (mappingItem: any) => !BigNumber.isInstance(mappingItem)
+            (mappingItem: any) => !LOCAL_VARIABLE.isInstance(mappingItem)
         );
         if (mappingLocation && mappingParts.length > 0) {
             if (!(mappingLocation in state.mappings)) {
@@ -261,7 +267,7 @@ export default (opcode: Opcode, state: EVM): void => {
         }
     } else if (
         false &&
-        BigNumber.isInstance(storeLocation) &&
+        LOCAL_VARIABLE.isInstance(storeLocation) &&
         storeLocation.toString() in state.variables &&
         storeData.type &&
         !state.variables[storeLocation.toString()].types.includes(storeData.type)

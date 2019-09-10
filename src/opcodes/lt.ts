@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class LT {
     readonly name: string;
@@ -31,8 +31,8 @@ export class LT {
 export default (opcode: Opcode, state: EVM): void => {
     const left = state.stack.pop();
     const right = state.stack.pop();
-    if (BigNumber.isInstance(left) && BigNumber.isInstance(right)) {
-        state.stack.push(BigNumber(left.lesser(right) === true ? 1 : 0));
+    if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
+        state.stack.push(new LOCAL_VARIABLE(opcode.pc, left.lesser(right) === true ? 1 : 0));
     } else {
         state.stack.push(new LT(left, right));
     }

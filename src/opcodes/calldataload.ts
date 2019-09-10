@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class CALLDATALOAD {
     readonly name: string;
@@ -17,10 +17,10 @@ export class CALLDATALOAD {
     }
 
     toString() {
-        if (BigNumber.isInstance(this.location) && this.location.isZero()) {
+        if (LOCAL_VARIABLE.isInstance(this.location) && this.location.isZero()) {
             return 'msg.data';
         } else if (
-            BigNumber.isInstance(this.location) &&
+            LOCAL_VARIABLE.isInstance(this.location) &&
             this.location
                 .subtract(4)
                 .mod(32)

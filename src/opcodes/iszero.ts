@@ -1,9 +1,9 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import { LT } from './lt';
 import { GT } from './gt';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class ISZERO {
     readonly name: string;
@@ -28,8 +28,8 @@ export class ISZERO {
 
 export default (opcode: Opcode, state: EVM): void => {
     const item = state.stack.pop();
-    if (BigNumber.isInstance(item)) {
-        state.stack.push(BigNumber(item.isZero() === true ? 1 : 0));
+    if (LOCAL_VARIABLE.isInstance(item)) {
+        state.stack.push(new LOCAL_VARIABLE(opcode.pc, item.isZero() === true ? 1 : 0));
     } else if (item.name === 'LT') {
         if (item.equal) {
             state.stack.push(new GT(item.left, item.right));

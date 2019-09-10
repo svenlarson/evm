@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class MUL {
     readonly name: string;
@@ -25,13 +25,13 @@ export class MUL {
 export default (opcode: Opcode, state: EVM): void => {
     const left = state.stack.pop();
     const right = state.stack.pop();
-    if (BigNumber.isInstance(left) && BigNumber.isInstance(right)) {
+    if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
         state.stack.push(left.multiply(right));
     } else if (
-        (BigNumber.isInstance(left) && left.isZero()) ||
-        (BigNumber.isInstance(right) && right.isZero())
+        (LOCAL_VARIABLE.isInstance(left) && left.isZero()) ||
+        (LOCAL_VARIABLE.isInstance(right) && right.isZero())
     ) {
-        state.stack.push(BigNumber(0));
+        state.stack.push(new LOCAL_VARIABLE(opcode.pc, 0));
     } else {
         state.stack.push(new MUL(left, right));
     }

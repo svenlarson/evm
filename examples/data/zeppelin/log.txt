@@ -1,0 +1,6479 @@
+==========
+Stack: Stack { elements: [] }
+0 PUSH1 80
+Stack: Stack { elements: [ Integer { value: 128n } ] }
+==========
+Stack: Stack { elements: [ Integer { value: 128n } ] }
+1 PUSH1 40
+Stack: Stack {
+  elements: [ Integer { value: 64n }, Integer { value: 128n } ] }
+==========
+Stack: Stack {
+  elements: [ Integer { value: 64n }, Integer { value: 128n } ] }
+2 MSTORE 
+Stack: Stack { elements: [] }
+==========
+Stack: Stack { elements: [] }
+3 PUSH1 04
+Stack: Stack { elements: [ Integer { value: 4n } ] }
+==========
+Stack: Stack { elements: [ Integer { value: 4n } ] }
+4 CALLDATASIZE 
+Stack: Stack {
+  elements:
+   [ CALLDATASIZE { name: 'CALLDATASIZE', wrapped: false },
+     Integer { value: 4n } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATASIZE { name: 'CALLDATASIZE', wrapped: false },
+     Integer { value: 4n } ] }
+5 LT 
+Stack: Stack {
+  elements:
+   [ LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATASIZE],
+       right: [Integer],
+       equal: false } ] }
+==========
+Stack: Stack {
+  elements:
+   [ LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATASIZE],
+       right: [Integer],
+       equal: false } ] }
+6 PUSH2 0056
+Stack: Stack {
+  elements:
+   [ Integer { value: 86n },
+     LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATASIZE],
+       right: [Integer],
+       equal: false } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 86n },
+     LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATASIZE],
+       right: [Integer],
+       equal: false } ] }
+7 JUMPI 
+==========
+Stack: Stack { elements: [] }
+29 JUMPDEST 
+Stack: Stack { elements: [] }
+==========
+Stack: Stack { elements: [] }
+30 PUSH1 00
+Stack: Stack { elements: [ Integer { value: 0n } ] }
+==========
+Stack: Stack { elements: [ Integer { value: 0n } ] }
+31 DUP1 
+Stack: Stack { elements: [ Integer { value: 0n }, Integer { value: 0n } ] }
+==========
+Stack: Stack { elements: [ Integer { value: 0n }, Integer { value: 0n } ] }
+32 REVERT 
+Stack: Stack { elements: [] }
+==========
+Stack: Stack { elements: [] }
+8 PUSH4 ffffffff
+Stack: Stack { elements: [ Integer { value: 4294967295n } ] }
+==========
+Stack: Stack { elements: [ Integer { value: 4294967295n } ] }
+9 PUSH29 0100000000000000000000000000000000000000000000000000000000
+Stack: Stack {
+  elements:
+   [ Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+10 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+11 CALLDATALOAD 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer {
+       value:
+        26959946667150639794667015087019630673637144422540572481103610249216n },
+     Integer { value: 4294967295n } ] }
+12 DIV 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer] },
+     Integer { value: 4294967295n } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer] },
+     Integer { value: 4294967295n } ] }
+13 AND 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+14 PUSH4 18160ddd
+Stack: Stack {
+  elements:
+   [ Integer { value: 404098525n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 404098525n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+15 DUP2 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     Integer { value: 404098525n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     Integer { value: 404098525n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+16 EQ 
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: '18160ddd' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: '18160ddd' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+17 PUSH2 005b
+Stack: Stack {
+  elements:
+   [ Integer { value: 91n },
+     SIG { name: 'SIG', wrapped: false, hash: '18160ddd' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 91n },
+     SIG { name: 'SIG', wrapped: false, hash: '18160ddd' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+18 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+33 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+34 CALLVALUE 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+35 DUP1 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+36 ISZERO 
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+37 PUSH2 0067
+Stack: Stack {
+  elements:
+   [ Integer { value: 103n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 103n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+38 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+42 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+43 POP 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+44 PUSH2 0070
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+45 PUSH2 00f5
+Stack: Stack {
+  elements:
+   [ Integer { value: 245n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 245n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+46 JUMP 
+JUMP from 0x6f to 0xf5, top stack: 70
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+120 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+121 SLOAD 
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+122 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+123 JUMP 
+JUMP from 0xfa to 0x70, top stack: storage[0]
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+48 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+49 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+50 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+51 SWAP2 
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+52 DUP3 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     SLOAD {
+       name: 'SLOAD',
+       wrapped: false,
+       location: [Integer],
+       variables: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+53 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+54 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+55 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+56 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+57 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+58 SUB 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+59 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+60 ADD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+61 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+62 RETURN 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+39 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+40 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+41 REVERT 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+19 DUP1 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+20 PUSH4 70a08231
+Stack: Stack {
+  elements:
+   [ Integer { value: 1889567281n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1889567281n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+21 EQ 
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: '70a08231' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: '70a08231' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+22 PUSH2 0082
+Stack: Stack {
+  elements:
+   [ Integer { value: 130n },
+     SIG { name: 'SIG', wrapped: false, hash: '70a08231' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 130n },
+     SIG { name: 'SIG', wrapped: false, hash: '70a08231' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+23 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+63 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+64 CALLVALUE 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+65 DUP1 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+66 ISZERO 
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+67 PUSH2 008e
+Stack: Stack {
+  elements:
+   [ Integer { value: 142n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 142n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+68 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+72 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+73 POP 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+74 PUSH2 0070
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+75 PUSH20 ffffffffffffffffffffffffffffffffffffffff
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+76 PUSH1 04
+Stack: Stack {
+  elements:
+   [ Integer { value: 4n },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 4n },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+77 CALLDATALOAD 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+78 AND 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+79 PUSH2 00fb
+Stack: Stack {
+  elements:
+   [ Integer { value: 251n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 251n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+80 JUMP 
+JUMP from 0xaf to 0xfb, top stack: _arg0
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+125 PUSH20 ffffffffffffffffffffffffffffffffffffffff
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+126 AND 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+127 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+128 SWAP1 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+129 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+130 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+131 PUSH1 01
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+132 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+133 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+134 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 0n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+135 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+136 SHA3 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+137 SLOAD 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 112n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+138 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 112n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+139 JUMP 
+JUMP from 0x122 to 0x70, top stack: mapping1[_arg0]
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+48 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+49 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+50 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+51 SWAP2 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+52 DUP3 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+53 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+54 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+55 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+56 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+57 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+58 SUB 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+59 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+60 ADD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+61 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+62 RETURN 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+69 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+70 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+71 REVERT 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+24 DUP1 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+25 PUSH4 a9059cbb
+Stack: Stack {
+  elements:
+   [ Integer { value: 2835717307n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 2835717307n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+26 EQ 
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: 'a9059cbb' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SIG { name: 'SIG', wrapped: false, hash: 'a9059cbb' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+27 PUSH2 00b0
+Stack: Stack {
+  elements:
+   [ Integer { value: 176n },
+     SIG { name: 'SIG', wrapped: false, hash: 'a9059cbb' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 176n },
+     SIG { name: 'SIG', wrapped: false, hash: 'a9059cbb' },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+28 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+81 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+82 CALLVALUE 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+83 DUP1 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+84 ISZERO 
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+85 PUSH2 00bc
+Stack: Stack {
+  elements:
+   [ Integer { value: 188n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 188n },
+     ISZERO { name: 'ISZERO', wrapped: true, item: [CALLVALUE] },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+86 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+90 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+91 POP 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+92 PUSH2 00e1
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+93 PUSH20 ffffffffffffffffffffffffffffffffffffffff
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+94 PUSH1 04
+Stack: Stack {
+  elements:
+   [ Integer { value: 4n },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 4n },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+95 CALLDATALOAD 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+96 AND 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+97 PUSH1 24
+Stack: Stack {
+  elements:
+   [ Integer { value: 36n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 36n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+98 CALLDATALOAD 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+99 PUSH2 0123
+Stack: Stack {
+  elements:
+   [ Integer { value: 291n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 291n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+100 JUMP 
+JUMP from 0xe0 to 0x123, top stack: _arg1
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+141 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+142 PUSH20 ffffffffffffffffffffffffffffffffffffffff
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+143 DUP4 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+144 AND 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+145 ISZERO 
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLDATALOAD] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ ISZERO { name: 'ISZERO', wrapped: true, item: [CALLDATALOAD] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+146 ISZERO 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+147 PUSH2 0147
+Stack: Stack {
+  elements:
+   [ Integer { value: 327n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 327n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+148 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+152 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+153 CALLER 
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+154 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+155 SWAP1 
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+156 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+157 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+158 PUSH1 01
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+159 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+160 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+161 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+162 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+163 SHA3 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+164 SLOAD 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+165 DUP3 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+166 GT 
+Stack: Stack {
+  elements:
+   [ GT {
+       name: 'GT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ GT {
+       name: 'GT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+167 ISZERO 
+Stack: Stack {
+  elements:
+   [ LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: true },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: true },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+168 PUSH2 0163
+Stack: Stack {
+  elements:
+   [ Integer { value: 355n },
+     LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: true },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 355n },
+     LT {
+       name: 'LT',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad],
+       equal: true },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+169 JUMPI 
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+173 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+174 POP 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+175 CALLER 
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+176 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+177 SWAP1 
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+178 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLER { name: 'address', wrapped: false },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+179 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+180 PUSH1 01
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+181 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+182 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+183 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 1n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+184 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+185 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+186 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+187 DUP4 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+188 SHA3 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+189 DUP1 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+190 SLOAD 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+191 DUP6 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+192 SWAP1 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+193 SUB 
+Stack: Stack {
+  elements:
+   [ SUB {
+       name: 'SUB',
+       wrapped: true,
+       left: [MappingLoad],
+       right: [CALLDATALOAD] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SUB {
+       name: 'SUB',
+       wrapped: true,
+       left: [MappingLoad],
+       right: [CALLDATALOAD] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+194 SWAP1 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SUB {
+       name: 'SUB',
+       wrapped: true,
+       left: [MappingLoad],
+       right: [CALLDATALOAD] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SUB {
+       name: 'SUB',
+       wrapped: true,
+       left: [MappingLoad],
+       right: [CALLDATALOAD] },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+195 SSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+196 PUSH20 ffffffffffffffffffffffffffffffffffffffff
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+197 DUP6 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1461501637330902918203684832716283019655932542975n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+198 AND 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+199 DUP4 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+200 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+201 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+202 SWAP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+203 SHA3 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+204 DUP1 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+205 SLOAD 
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+206 DUP4 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     MappingLoad {
+       name: 'MappingLoad',
+       wrapped: false,
+       location: [Integer],
+       count: 0,
+       items: [Array],
+       structlocation: undefined,
+       mappings: [Function] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+207 ADD 
+Stack: Stack {
+  elements:
+   [ ADD {
+       name: 'ADD',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ ADD {
+       name: 'ADD',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad] },
+     SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+208 SWAP1 
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     ADD {
+       name: 'ADD',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ SHA3 { name: 'SHA3', wrapped: false, items: [Array] },
+     ADD {
+       name: 'ADD',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [MappingLoad] },
+     Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+209 SSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+210 SWAP3 
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+211 SWAP2 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+212 POP 
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+213 POP 
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 225n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+214 JUMP 
+JUMP from 0x1a4 to 0xe1, top stack: 1
+WEEEW
+otjeoh
+Summary on jumped (=inline function call): false
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+102 PUSH1 40
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+103 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+104 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 64n },
+     Integer { value: 1n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+105 SWAP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+106 ISZERO 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+107 ISZERO 
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+108 DUP3 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 1n },
+     Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+109 MSTORE 
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 64n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+110 MLOAD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+111 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+112 DUP2 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+113 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 128n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+114 SUB 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+115 PUSH1 20
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 0n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+116 ADD 
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 32n },
+     Integer { value: 128n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+117 SWAP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 128n },
+     Integer { value: 32n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+118 RETURN 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+170 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+171 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+172 REVERT 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+149 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+150 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+151 REVERT 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLDATALOAD { name: 'CALLDATALOAD', wrapped: false, location: [Integer] },
+     CALLDATALOAD {
+       name: 'CALLDATALOAD',
+       wrapped: false,
+       location: [Integer],
+       size: 40 },
+     Integer { value: 225n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+87 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+88 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+89 REVERT 
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ CALLVALUE { name: 'CALLVALUE', wrapped: false },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+29 JUMPDEST 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+30 PUSH1 00
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+31 DUP1 
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+==========
+Stack: Stack {
+  elements:
+   [ Integer { value: 0n },
+     Integer { value: 0n },
+     DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+32 REVERT 
+Stack: Stack {
+  elements:
+   [ DIV {
+       name: 'DIV',
+       wrapped: true,
+       left: [CALLDATALOAD],
+       right: [Integer],
+       size: 8 } ] }
+Stack: Stack { elements: [] }

@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class SIG {
     readonly name: string;
@@ -42,27 +42,27 @@ export class EQ {
 export default (opcode: Opcode, state: EVM): void => {
     let left = state.stack.pop();
     let right = state.stack.pop();
-    if (BigNumber.isInstance(left) && BigNumber.isInstance(right)) {
-        state.stack.push(BigNumber(left.equals(right) === true ? 1 : 0));
+    if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
+        state.stack.push(new LOCAL_VARIABLE(opcode.pc, left.equals(right) === true ? 1 : 0));
     } else {
         if (
-            BigNumber.isInstance(left) &&
+            LOCAL_VARIABLE.isInstance(left) &&
             right.name === 'DIV' &&
-            BigNumber.isInstance(right.right)
+            LOCAL_VARIABLE.isInstance(right.right)
         ) {
             left = left.multiply(right.right);
             right = right.left;
         }
         if (
-            BigNumber.isInstance(right) &&
+            LOCAL_VARIABLE.isInstance(right) &&
             left.name === 'DIV' &&
-            BigNumber.isInstance(left.right)
+            LOCAL_VARIABLE.isInstance(left.right)
         ) {
             right = right.multiply(left.right);
             left = left.left;
         }
         if (
-            BigNumber.isInstance(left) &&
+            LOCAL_VARIABLE.isInstance(left) &&
             /^[0]+$/.test(left.toString(16).substring(8)) &&
             right.name === 'CALLDATALOAD' &&
             right.location.equals(0)
@@ -74,7 +74,8 @@ export default (opcode: Opcode, state: EVM): void => {
                 )
             );
         } else if (
-            BigNumber.isInstance(right) &&
+            // this should be true
+            LOCAL_VARIABLE.isInstance(right) &&
             /^[0]+$/.test(right.toString(16).substring(8)) &&
             left.name === 'CALLDATALOAD' &&
             left.location.equals(0)

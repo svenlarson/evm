@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class ADD {
     readonly name: string;
@@ -36,11 +36,11 @@ export class ADD {
 export default (opcode: Opcode, state: EVM): void => {
     const left = state.stack.pop();
     const right = state.stack.pop();
-    if (BigNumber.isInstance(left) && BigNumber.isInstance(right)) {
+    if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
         state.stack.push(left.add(right));
-    } else if (BigNumber.isInstance(left) && left.isZero()) {
+    } else if (LOCAL_VARIABLE.isInstance(left) && left.isZero()) {
         state.stack.push(right);
-    } else if (BigNumber.isInstance(right) && right.isZero()) {
+    } else if (LOCAL_VARIABLE.isInstance(right) && right.isZero()) {
         state.stack.push(left);
     } else {
         state.stack.push(new ADD(left, right));

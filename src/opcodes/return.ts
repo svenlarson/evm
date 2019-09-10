@@ -2,8 +2,9 @@ import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
 import { MLOAD } from './mload';
 import { hex2a } from '../utils/hex';
-import * as BigNumber from '../../node_modules/big-integer';
+
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class RETURN {
     readonly name: string;
@@ -39,12 +40,12 @@ export class RETURN {
             return 'return;';
         } else if (
             this.items.length === 1 &&
-            (BigNumber.isInstance(this.items[0]) || this.items[0].static)
+            (LOCAL_VARIABLE.isInstance(this.items[0]) || this.items[0].static)
         ) {
             return 'return ' + this.items[0] + ';';
         } else if (
             this.items.length === 3 &&
-            this.items.every((item: any) => BigNumber.isInstance(item)) &&
+            this.items.every((item: any) => LOCAL_VARIABLE.isInstance(item)) &&
             this.items[0].equals(32)
         ) {
             return 'return "' + hex2a(this.items[2].toString(16)) + '";';
@@ -58,11 +59,12 @@ export default (opcode: Opcode, state: EVM): void => {
     const memoryStart = state.stack.pop();
     const memoryLength = state.stack.pop();
     state.halted = true;
-    if (BigNumber.isInstance(memoryStart) && BigNumber.isInstance(memoryLength)) {
+    if (LOCAL_VARIABLE.isInstance(memoryStart) && LOCAL_VARIABLE.isInstance(memoryLength)) {
         const items = [];
+        const memoryEnd = memoryStart.add(memoryLength).toJSNumber();
         for (
             let i = memoryStart.toJSNumber();
-            i < memoryStart.add(memoryLength).toJSNumber();
+            i < memoryEnd;
             i += 32
         ) {
             if (i in state.memory) {

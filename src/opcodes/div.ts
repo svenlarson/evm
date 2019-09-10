@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class DIV {
     readonly name: string;
@@ -25,9 +25,9 @@ export class DIV {
 export default (opcode: Opcode, state: EVM): void => {
     const left = state.stack.pop();
     const right = state.stack.pop();
-    if (BigNumber.isInstance(left) && BigNumber.isInstance(right)) {
+    if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
         state.stack.push(left.divide(right));
-    } else if (BigNumber.isInstance(right) && right.equals(1)) {
+    } else if (LOCAL_VARIABLE.isInstance(right) && right.equals(1)) {
         state.stack.push(left);
     } else {
         state.stack.push(new DIV(left, right));

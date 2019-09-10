@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class BYTE {
     readonly name: string;
@@ -25,7 +25,7 @@ export class BYTE {
 export default (opcode: Opcode, state: EVM): void => {
     const position = state.stack.pop();
     const data = state.stack.pop();
-    if (BigNumber.isInstance(data) && BigNumber.isInstance(position)) {
+    if (LOCAL_VARIABLE.isInstance(data) && LOCAL_VARIABLE.isInstance(position)) {
         state.stack.push(data.shiftRight(position).and(1));
     } else {
         state.stack.push(new BYTE(position, data));

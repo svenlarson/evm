@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class CALL {
     readonly name: string;
@@ -39,15 +39,15 @@ export class CALL {
 
     toString() {
         if (
-            BigNumber.isInstance(this.memoryLength) &&
+            LOCAL_VARIABLE.isInstance(this.memoryLength) &&
             this.memoryLength.isZero() &&
-            BigNumber.isInstance(this.outputLength) &&
+            LOCAL_VARIABLE.isInstance(this.outputLength) &&
             this.outputLength.isZero()
         ) {
             if (
                 this.gas.name === 'MUL' &&
                 this.gas.left.name === 'ISZERO' &&
-                BigNumber.isInstance(this.gas.right) &&
+                LOCAL_VARIABLE.isInstance(this.gas.right) &&
                 this.gas.right.equals(2300)
             ) {
                 if (this.throwOnFail) {

@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class MLOAD {
     readonly name: string;
@@ -22,7 +22,7 @@ export class MLOAD {
 
 export default (opcode: Opcode, state: EVM): void => {
     const memoryLocation = state.stack.pop();
-    if (BigNumber.isInstance(memoryLocation) && memoryLocation.toJSNumber() in state.memory) {
+    if (LOCAL_VARIABLE.isInstance(memoryLocation) && memoryLocation.toJSNumber() in state.memory) {
         state.stack.push(state.memory[memoryLocation.toJSNumber()]);
     } else {
         state.stack.push(new MLOAD(memoryLocation));

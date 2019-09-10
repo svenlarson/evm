@@ -2,7 +2,7 @@ import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
 import { MLOAD } from './mload';
 import * as eventHashes from '../../data/eventHashes.json';
-import * as BigNumber from '../../node_modules/big-integer';
+import { LOCAL_VARIABLE } from './push';
 
 export class LOG {
     readonly name: string;
@@ -20,7 +20,7 @@ export class LOG {
         this.topics = topics;
         if (
             this.topics.length > 0 &&
-            BigNumber.isInstance(this.topics[0]) &&
+            LOCAL_VARIABLE.isInstance(this.topics[0]) &&
             this.topics[0].toString(16) in eventHashes
         ) {
             this.eventName = (eventHashes as any)[this.topics[0].toString(16)].split('(')[0];
@@ -63,7 +63,7 @@ export default (opcode: Opcode, state: EVM): void => {
             }
         }
     }
-    if (BigNumber.isInstance(memoryStart) && BigNumber.isInstance(memoryLength)) {
+    if (LOCAL_VARIABLE.isInstance(memoryStart) && LOCAL_VARIABLE.isInstance(memoryLength)) {
         const items = [];
         for (
             let i = memoryStart.toJSNumber();

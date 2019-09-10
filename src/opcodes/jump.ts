@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class JUMP {
     readonly name: string;
@@ -47,7 +47,7 @@ export class FUNCTIONCALL {
 
 export default (opcode: Opcode, state: EVM): void => {
     const jumpLocation = state.stack.pop();
-    if (!BigNumber.isInstance(jumpLocation)) {
+    if (!LOCAL_VARIABLE.isInstance(jumpLocation)) {
         state.halted = true;
         state.instructions.push(new JUMP(jumpLocation, true));
     } else {
@@ -85,9 +85,14 @@ export default (opcode: Opcode, state: EVM): void => {
                                 element.realFunctionEntry === jumpLocation.toJSNumber() &&
                                 element.normalJumpToRealEntry !== opcode.pc
                             ) {
+                                console.log('detected function jump for function ' + element);
+                                state.loglowlevel('detected function jump for function ' + element);
+
                                 // gather all input arguments from the stack
                                 const input: any = [];
-                                element.datatypes.foreach(() => input.push(state.stack.pop()));
+                                if (element.datatypes.length > 0) {
+                                    element.datatypes.forEach(() => input.push(state.stack.pop()));
+                                }
 
                                 let name;
                                 if (element.name) {
@@ -109,7 +114,7 @@ export default (opcode: Opcode, state: EVM): void => {
                             }
                         }
                     } else {
-                        jumped = true;
+                        jumped = false;
                     }
 
                     if (!jumped) {

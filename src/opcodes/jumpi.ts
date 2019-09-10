@@ -1,8 +1,8 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
-import * as BigNumber from '../../node_modules/big-integer';
 import * as functionHashes from '../../data/functionHashes.json';
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 const updateCallDataLoad = (item: any, types: any) => {
     for (const i in item) {
@@ -10,7 +10,7 @@ const updateCallDataLoad = (item: any, types: any) => {
             if (
                 typeof item[i] === 'object' &&
                 item[i].name === 'CALLDATALOAD' &&
-                BigNumber.isInstance(item[i].location)
+                LOCAL_VARIABLE.isInstance(item[i].location)
             ) {
                 const argNumber = item[i].location
                     .subtract(4)
@@ -117,7 +117,7 @@ export class TopLevelFunction {
             )
         ) {
             returns[0].forEach((item: any) => {
-                if (BigNumber.isInstance(item)) {
+                if (LOCAL_VARIABLE.isInstance(item)) {
                     this.returns.push('uint256');
                 } else if (item.type) {
                     this.returns.push(item.type);
@@ -217,7 +217,7 @@ export default (opcode: Opcode, state: EVM): void => {
     // console.log(jumpLocation);
     // console.log(state.conditions);
     // console.log('-');
-    if (!BigNumber.isInstance(jumpLocation)) {
+    if (!LOCAL_VARIABLE.isInstance(jumpLocation)) {
         state.halted = true;
         state.instructions.push(new JUMPI(jumpCondition, jumpLocation));
     } else {
@@ -226,7 +226,7 @@ export default (opcode: Opcode, state: EVM): void => {
             //state.halted = true;
             //state.instructions.push(new JUMPI(jumpCondition, jumpLocation));
             state.instructions.push(new REQUIRE(jumpCondition));
-        } else if (BigNumber.isInstance(jumpCondition)) {
+        } else if (LOCAL_VARIABLE.isInstance(jumpCondition)) {
             const jumpIndex = opcodes.indexOf(jumpLocationData);
             if (
                 jumpIndex >= 0 &&
@@ -274,7 +274,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     state.functions[jumpCondition.hash].items[0].name === 'RETURN' &&
                     state.functions[jumpCondition.hash].items[0].items.length === 1 &&
                     state.functions[jumpCondition.hash].items[0].items[0].name === 'SLOAD' &&
-                    BigNumber.isInstance(
+                    LOCAL_VARIABLE.isInstance(
                         state.functions[jumpCondition.hash].items[0].items[0].location
                     )
                 ) {
@@ -302,7 +302,7 @@ export default (opcode: Opcode, state: EVM): void => {
             !(opcode.pc + ':' + jumpLocation.toJSNumber() in state.jumps) &&
             ((jumpCondition.name === 'LT' &&
                 jumpCondition.left.name === 'CALLDATASIZE' &&
-                BigNumber.isInstance(jumpCondition.right) &&
+                LOCAL_VARIABLE.isInstance(jumpCondition.right) &&
                 jumpCondition.right.equals(4)) ||
                 (jumpCondition.name === 'ISZERO' && jumpCondition.item.name === 'CALLDATASIZE'))
         ) {
@@ -354,6 +354,8 @@ export default (opcode: Opcode, state: EVM): void => {
                 const falseClone = state.clone();
                 falseClone.pc = state.pc + 1;
                 const falseCloneTree: any = falseClone.parse();
+
+                // chceck if we can simplify
                 if (
                     (falseCloneTree.length === 1 &&
                         'name' in falseCloneTree[0] &&
@@ -364,13 +366,13 @@ export default (opcode: Opcode, state: EVM): void => {
                 ) {
                     if (
                         jumpCondition.name === 'CALL' &&
-                        BigNumber.isInstance(jumpCondition.memoryLength) &&
+                        LOCAL_VARIABLE.isInstance(jumpCondition.memoryLength) &&
                         jumpCondition.memoryLength.isZero() &&
-                        BigNumber.isInstance(jumpCondition.outputLength) &&
+                        LOCAL_VARIABLE.isInstance(jumpCondition.outputLength) &&
                         jumpCondition.outputLength.isZero() &&
                         jumpCondition.gas.name === 'MUL' &&
                         jumpCondition.gas.left.name === 'ISZERO' &&
-                        BigNumber.isInstance(jumpCondition.gas.right) &&
+                        LOCAL_VARIABLE.isInstance(jumpCondition.gas.right) &&
                         jumpCondition.gas.right.equals(2300)
                     ) {
                         jumpCondition.throwOnFail = true;

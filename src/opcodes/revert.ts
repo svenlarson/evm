@@ -1,8 +1,9 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
 import { MLOAD } from './mload';
-import * as BigNumber from '../../node_modules/big-integer';
+
 import stringify from '../utils/stringify';
+import { LOCAL_VARIABLE } from './push';
 
 export class REVERT {
     readonly name: string;
@@ -44,7 +45,7 @@ export default (opcode: Opcode, state: EVM): void => {
     const memoryStart = state.stack.pop();
     const memoryLength = state.stack.pop();
     state.halted = true;
-    if (BigNumber.isInstance(memoryStart) && BigNumber.isInstance(memoryLength)) {
+    if (LOCAL_VARIABLE.isInstance(memoryStart) && LOCAL_VARIABLE.isInstance(memoryLength)) {
         const items = [];
         for (
             let i = memoryStart.toJSNumber();
