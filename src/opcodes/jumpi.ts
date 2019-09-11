@@ -391,7 +391,7 @@ export default (opcode: Opcode, state: EVM): void => {
                 state.instructions.push(new JUMPI(jumpCondition, jumpLocation));
             }
         } else {
-            state.instructions.push(new JUMPI(jumpCondition, jumpLocation, null, null, true));
+            state.instructions.push(new JUMPI(jumpCondition, jumpLocation.toString(16), null, null, true));
         }
     }
 };

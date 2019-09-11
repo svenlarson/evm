@@ -16,47 +16,46 @@ export class LOCAL_VARIABLE {
         this.name = 'Variable';
         this.label = label;
         this.data = data;
-        this.isConstant = true;// (BigNumber.isInstance(data) && data.equals(0)) ? false: true;
+        this.isConstant = true; // (BigNumber.isInstance(data) && data.equals(0)) ? false: true;
     }
 
     add(left: any): any {
         if (BigNumber.isInstance(left) || typeof left === 'number') {
-            return new LOCAL_VARIABLE(this.label*10, this.data.add(left));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.add(left));
         } else {
-            return new LOCAL_VARIABLE(this.label*10, this.data.add(left.data))
+            return new LOCAL_VARIABLE(this.label * 10, this.data.add(left.data));
         }
     }
 
     subtract(left: any): any {
         if (BigNumber.isInstance(left) || typeof left === 'number') {
-            return new LOCAL_VARIABLE(this.label*10, this.data.subtract(left));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.subtract(left));
         } else {
-            return new LOCAL_VARIABLE(this.label*10, this.data.subtract(left.data));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.subtract(left.data));
         }
     }
 
     divide(left: any): any {
         if (BigNumber.isInstance(left) || typeof left === 'number') {
-            return new LOCAL_VARIABLE(this.label*10, this.data.divide(left));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.divide(left));
         } else {
-            return new LOCAL_VARIABLE(this.label*10, this.data.divide(left.data));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.divide(left.data));
         }
     }
 
     multiply(left: any): any {
         if (BigNumber.isInstance(left) || typeof left === 'number') {
-            return new LOCAL_VARIABLE(this.label*10, this.data.multiply(left));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.multiply(left));
         } else {
-            return new LOCAL_VARIABLE(this.label*10, this.data.multiply(left.data));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.multiply(left.data));
         }
     }
 
-
     mod(left: any): any {
         if (BigNumber.isInstance(left) || typeof left === 'number') {
-            return new LOCAL_VARIABLE(this.label*10, this.data.mod(left));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.mod(left));
         } else {
-            return new LOCAL_VARIABLE(this.label*10, this.data.mod(left.data));
+            return new LOCAL_VARIABLE(this.label * 10, this.data.mod(left.data));
         }
     }
 
@@ -87,7 +86,7 @@ export class LOCAL_VARIABLE_DECLARATION {
     }
 
     toString() {
-        return 'declare var_' + this.variable.label + '=' +this.variable.data;
+        return 'declare var_' + this.variable.label.toString(16) + '=' + this.variable.data;
     }
 }
 
@@ -95,7 +94,7 @@ export default (opcode: Opcode, state: EVM): void => {
     // const pushDataLength = parseInt(opcode.name.replace('PUSH', ''), 10);
     const variable = new LOCAL_VARIABLE(opcode.pc, BigNumber(opcode.pushData!.toString('hex'), 16));
     state.stack.push(variable);
-    // state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
+    state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
 
     // const variable = BigNumber(opcode.pushData!.toString('hex'), 16);
     // state.stack.push(variable);

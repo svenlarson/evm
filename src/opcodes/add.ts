@@ -1,7 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
 import stringify from '../utils/stringify';
-import { LOCAL_VARIABLE } from './push';
+import { LOCAL_VARIABLE, LOCAL_VARIABLE_DECLARATION } from './push';
 
 export class ADD {
     readonly name: string;
@@ -38,10 +38,22 @@ export default (opcode: Opcode, state: EVM): void => {
     const right = state.stack.pop();
     if (LOCAL_VARIABLE.isInstance(left) && LOCAL_VARIABLE.isInstance(right)) {
         state.stack.push(left.add(right));
+
+        const variable = new LOCAL_VARIABLE(opcode.pc, state.stack.pop());
+        state.stack.push(variable);
+        state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
+    
+
     } else if (LOCAL_VARIABLE.isInstance(left) && left.isZero()) {
         state.stack.push(right);
+        const variable = new LOCAL_VARIABLE(opcode.pc, state.stack.pop());
+        state.stack.push(variable);
+        state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
     } else if (LOCAL_VARIABLE.isInstance(right) && right.isZero()) {
         state.stack.push(left);
+        const variable = new LOCAL_VARIABLE(opcode.pc, state.stack.pop());
+        state.stack.push(variable);
+        state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
     } else {
         state.stack.push(new ADD(left, right));
     }

@@ -62,11 +62,7 @@ export default (opcode: Opcode, state: EVM): void => {
     if (LOCAL_VARIABLE.isInstance(memoryStart) && LOCAL_VARIABLE.isInstance(memoryLength)) {
         const items = [];
         const memoryEnd = memoryStart.add(memoryLength).toJSNumber();
-        for (
-            let i = memoryStart.toJSNumber();
-            i < memoryEnd;
-            i += 32
-        ) {
+        for (let i = memoryStart.toJSNumber(); i < memoryEnd; i += 32) {
             if (i in state.memory) {
                 items.push(state.memory[i]);
             } else {

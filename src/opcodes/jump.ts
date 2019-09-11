@@ -49,19 +49,19 @@ export default (opcode: Opcode, state: EVM): void => {
     const jumpLocation = state.stack.pop();
     if (!LOCAL_VARIABLE.isInstance(jumpLocation)) {
         state.halted = true;
-        state.instructions.push(new JUMP(jumpLocation, true));
+        state.instructions.push(new JUMP(jumpLocation.toString(16), true));
     } else {
         const opcodes = state.getOpcodes();
         const jumpLocationData = opcodes.find((o: any) => o.pc === jumpLocation.toJSNumber());
         if (!jumpLocationData) {
             state.halted = true;
-            state.instructions.push(new JUMP(jumpLocation, true));
+            state.instructions.push(new JUMP(jumpLocation.toString(16), true));
         } else {
             const jumpIndex = opcodes.indexOf(jumpLocationData);
             if (!(opcode.pc + ':' + jumpLocation.toJSNumber() in state.jumps)) {
                 if (!jumpLocationData || jumpLocationData.name !== 'JUMPDEST') {
                     state.halted = true;
-                    state.instructions.push(new JUMP(jumpLocation, true));
+                    state.instructions.push(new JUMP(jumpLocation.toString(16), true));
                 } else if (
                     jumpLocationData &&
                     jumpIndex >= 0 &&
@@ -123,11 +123,11 @@ export default (opcode: Opcode, state: EVM): void => {
                     }
                 } else {
                     state.halted = true;
-                    state.instructions.push(new JUMP(jumpLocation, true));
+                    state.instructions.push(new JUMP(jumpLocation.toString(16), true));
                 }
             } else {
                 state.halted = true;
-                state.instructions.push(new JUMP(jumpLocation));
+                state.instructions.push(new JUMP(jumpLocation.toString(16)));
             }
         }
     }
