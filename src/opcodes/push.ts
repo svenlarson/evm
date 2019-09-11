@@ -1,6 +1,7 @@
 import EVM from '../classes/evm.class';
 import Opcode from '../interfaces/opcode.interface';
 import * as BigNumber from '../../node_modules/big-integer';
+import stringify from '../utils/stringify';
 
 export class LOCAL_VARIABLE {
     static isInstance(a: any) {
@@ -17,6 +18,13 @@ export class LOCAL_VARIABLE {
         this.label = label;
         this.data = data;
         this.isConstant = true; // (BigNumber.isInstance(data) && data.equals(0)) ? false: true;
+
+        if (data instanceof LOCAL_VARIABLE) {
+            console.log("ZOMG NON CONSTANT " + this.label.toString(16))
+            console.log(this.data);
+            console.log(this.toString(16));
+            this.isConstant = false;
+        }
     }
 
     add(left: any): any {
@@ -72,7 +80,26 @@ export class LOCAL_VARIABLE {
     }
 
     toString(a: any): string {
-        return this.data.toString(a);
+        if (BigNumber.isInstance(this.data)) {
+            if (a == 16) {
+                return "0x" + this.data.toString(16);
+            }
+            else {
+                return this.data.toString(a);
+            }
+        }
+        else if (this.data instanceof LOCAL_VARIABLE) {
+            const q = <LOCAL_VARIABLE>this.data;
+            if (q.isConstant) {
+                return this.data.toString(16);
+
+            } else {
+
+                return "var_0x" + this.data.label.toString(16);
+            }
+        } else{
+            return stringify(this.data);
+        }
     }
 }
 
@@ -86,7 +113,7 @@ export class LOCAL_VARIABLE_DECLARATION {
     }
 
     toString() {
-        return 'declare var_' + this.variable.label.toString(16) + '=' + this.variable.data;
+        return 'declare var_0x' + this.variable.label.toString(16) + '=' + this.variable.data;
     }
 }
 

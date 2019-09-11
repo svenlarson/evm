@@ -56,5 +56,8 @@ export default (opcode: Opcode, state: EVM): void => {
         state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
     } else {
         state.stack.push(new ADD(left, right));
+        const variable = new LOCAL_VARIABLE(opcode.pc, state.stack.pop());
+        state.stack.push(variable);
+        state.instructions.push(new LOCAL_VARIABLE_DECLARATION(variable));
     }
 };

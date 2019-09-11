@@ -27,6 +27,7 @@ import {
 } from '../opcodes';
 import * as fs from 'fs';
 import * as util from 'util';
+import { LOCAL_VARIABLE_DECLARATION } from '../opcodes/push';
 
 export default class EVM {
     pc: number = 0;
@@ -199,16 +200,17 @@ export default class EVM {
         }
         fs.appendFileSync(logname, 'Stack: ' + util.inspect(this.stack, { depth: null }) + '\n');
         fs.appendFileSync(logname, 'Memory: ' + util.inspect(this.memory, { depth: null }) + '\n');
+        // fs.appendFileSync(logname, 'Instructions: ' + util.inspect(this.instructions, { depth: null }) + '\n');
         if (opcode !== undefined) {
             fs.appendFileSync(
                 logname,
                 '0x' +
-                    pc.toString(16) +
-                    ' ' +
-                    opcode.name +
-                    ' ' +
-                    (opcode.pushData ? opcode.pushData.toString('hex') : '') +
-                    '\n'
+                pc.toString(16) +
+                ' ' +
+                opcode.name +
+                ' ' +
+                (opcode.pushData ? opcode.pushData.toString('hex') : '') +
+                '\n'
             );
         }
     }
@@ -236,6 +238,20 @@ export default class EVM {
                 }
             }
         }
+
+        const copyInstructions = this.instructions;
+        this.instructions = [];
+        copyInstructions.forEach((instruction) => {
+            if (instruction instanceof LOCAL_VARIABLE_DECLARATION) {
+                const otje = <LOCAL_VARIABLE_DECLARATION> instruction;
+                if (!otje.variable.isConstant || true) {
+                    this.instructions.push(instruction);
+                }
+            } else {
+                this.instructions.push(instruction);
+            }
+        });
+
         return this.instructions;
     }
 
