@@ -148,15 +148,27 @@ export class REQUIRE {
     readonly type?: string;
     readonly wrapped: boolean;
     readonly condition: any;
+    readonly items: any;
 
-    constructor(condition: any) {
+    constructor(condition: any, items?: any) {
         this.name = 'REQUIRE';
         this.wrapped = true;
         this.condition = condition;
+        this.items = items;
     }
 
     toString() {
-        return 'require(' + stringify(this.condition) + ');';
+        if (this.items) {
+            return (
+                'require(' +
+                stringify(this.condition) +
+                ', ' +
+                this.items.map((item: any) => stringify(item)).join(', ') +
+                ');'
+            );
+        } else {
+            return 'require(' + stringify(this.condition) + ');';
+        }
     }
 }
 
@@ -205,7 +217,11 @@ export class JUMPI {
             return 'if' + stringify(this.condition) + ' goto(' + stringify(this.location) + ');';
         } else {
             // console.log(this);
-            return "revert(\"Bad jump destination\");";
+            return (
+                'revert("Bad jump destination for JUMPI; location = 0x' +
+                this.location.toString(16) +
+                ' ");'
+            );
         }
     }
 }
@@ -244,8 +260,10 @@ export default (opcode: Opcode, state: EVM): void => {
             if (jumpIndex >= 0) {
                 const functionClone: any = state.clone();
                 functionClone.pc = jumpIndex;
+
                 const functionCloneTree = functionClone.parse();
-                console.log('New top level function #1: ' + jumpCondition.hash);
+                console.log('New top level function type #1: ' + jumpCondition.hash);
+
                 state.functions[jumpCondition.hash] = new TopLevelFunction(
                     functionCloneTree,
                     jumpCondition.hash,
@@ -284,12 +302,14 @@ export default (opcode: Opcode, state: EVM): void => {
                             state.variables
                         )
                     ) {
+                        // the function is just a public getter
                         const fullFunction = (functionHashes as any)[jumpCondition.hash];
                         state.variables[
                             state.functions[jumpCondition.hash].items[0].items[0].location
                         ] = new Variable(fullFunction.split('(')[0], []);
                         delete state.functions[jumpCondition.hash];
                     } else {
+                        // the function is just a public getter
                         const fullFunction = (functionHashes as any)[jumpCondition.hash];
                         state.variables[
                             state.functions[jumpCondition.hash].items[0].items[0].location
@@ -324,7 +344,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     trueCloneTree.map((item: any) => stringify(item)).join('') ===
                         falseCloneTree.map((item: any) => stringify(item)).join('')
                 ) {
-                    console.log('New top level function #2 (fallback?)');
+                    console.log('New top level function type #2 = fallback function');
                     state.functions[''] = new TopLevelFunction(
                         trueCloneTree,
                         '',
@@ -373,6 +393,7 @@ export default (opcode: Opcode, state: EVM): void => {
                         BigNumber.isInstance(jumpCondition.gas.right) &&
                         jumpCondition.gas.right.equals(2300)
                     ) {
+                        // the require is printed by the CALL instruction
                         jumpCondition.throwOnFail = true;
                         state.instructions.push(jumpCondition);
                         state.instructions.push(...trueCloneTree);
@@ -380,6 +401,13 @@ export default (opcode: Opcode, state: EVM): void => {
                         state.instructions.push(new REQUIRE(jumpCondition));
                         state.instructions.push(...trueCloneTree);
                     }
+                } else if (
+                    falseCloneTree.length === 1 &&
+                    'name' in falseCloneTree[0] &&
+                    falseCloneTree[0].name === 'REVERT'
+                ) {
+                    state.instructions.push(new REQUIRE(jumpCondition, falseCloneTree[0].items));
+                    state.instructions.push(...trueCloneTree);
                 } else {
                     state.instructions.push(
                         new JUMPI(jumpCondition, jumpLocation, trueCloneTree, falseCloneTree)

@@ -22,7 +22,11 @@ export class JUMP {
 
     toString() {
         if (!this.valid) {
-            return "revert(\"Bad jump destination\");";
+            return (
+                'revert("Bad jump destination for JUMP; location = 0x' +
+                this.location.toString(16) +
+                ' ");'
+            );
         } else {
             return 'goto(' + stringify(this.location) + ');';
         }
@@ -85,12 +89,16 @@ export default (opcode: Opcode, state: EVM): void => {
                                 element.realFunctionEntry === jumpLocation.toJSNumber() &&
                                 element.normalJumpToRealEntry !== opcode.pc
                             ) {
-                                console.log('detected function jump for function ' + element);
-                                state.loglowlevel('detected function jump for function ' + element);
+                                console.log('detected function jump for function ' + element.hash);
+                                state.loglowlevel(
+                                    'detected function jump for function ' + element.hash
+                                );
 
                                 // gather all input arguments from the stack
                                 const input: any = [];
-                                element.datatypes.foreach(() => input.push(state.stack.pop()));
+                                if (element.datatypes.length > 0) {
+                                    element.datatypes.forEach(() => input.push(state.stack.pop()));
+                                }
 
                                 let name;
                                 if (element.name) {
@@ -103,7 +111,7 @@ export default (opcode: Opcode, state: EVM): void => {
                                 state.loglowlevel('new functioncall: ' + name);
                                 state.loglowlevel(functionCall);
 
-                                // pop jump destination
+                                // pop return jump destination
                                 state.stack.pop();
 
                                 // push function return result

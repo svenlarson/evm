@@ -46,7 +46,7 @@ export default class EVM {
     gasUsed: number = 0;
     conditions: any = [];
     functionInfo: any = [];
-    logdirectory: any = [];
+    logdirectory: any = undefined;
 
     constructor(code: string | Buffer) {
         if (code instanceof Buffer) {
@@ -193,28 +193,33 @@ export default class EVM {
         this.gasUsed = 0;
     }
     log(pc: number, opcode?: Opcode): void {
-        const logname = this.logdirectory + 'log.txt';
-        if (opcode !== undefined) {
-            fs.appendFileSync(logname, '==========\n');
-        }
-        fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
-        if (opcode !== undefined) {
-            fs.appendFileSync(
-                logname,
-                '' +
-                    pc +
-                    ' ' +
-                    opcode.name +
-                    ' ' +
-                    (opcode.pushData ? opcode.pushData.toString('hex') : '') +
-                    '\n'
-            );
+        if (this.logdirectory) {
+            const logname = this.logdirectory + 'log.txt';
+            if (opcode !== undefined) {
+                fs.appendFileSync(logname, '==========\n');
+            }
+            fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
+            fs.appendFileSync(logname, 'Memory: ' + util.format(this.memory) + '\n');
+            if (opcode !== undefined) {
+                fs.appendFileSync(
+                    logname,
+                    '' +
+                        pc +
+                        ' ' +
+                        opcode.name +
+                        ' ' +
+                        (opcode.pushData ? opcode.pushData.toString('hex') : '') +
+                        '\n'
+                );
+            }
         }
     }
 
     loglowlevel(data: any): void {
-        const logname = this.logdirectory + 'log.txt';
-        fs.appendFileSync(logname, data + '\n');
+        if (this.logdirectory) {
+            const logname = this.logdirectory + 'log.txt';
+            fs.appendFileSync(logname, data + '\n');
+        }
     }
 
     parse(): Instruction[] {
