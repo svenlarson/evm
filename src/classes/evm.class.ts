@@ -198,11 +198,12 @@ export default class EVM {
             fs.appendFileSync(logname, '==========\n');
         }
         fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
+        fs.appendFileSync(logname, 'Instructions: ' + util.format(this.instructions) + '\n');
         if (opcode !== undefined) {
             fs.appendFileSync(
                 logname,
-                '' +
-                    pc +
+                '0x' +
+                    pc.toString(16) +
                     ' ' +
                     opcode.name +
                     ' ' +
@@ -231,7 +232,7 @@ export default class EVM {
                     (opcodeFunctions as any)[opcode.name](opcode, this);
                 }
                 if (this.logdirectory) {
-                    this.log(this.pc);
+                    this.log(this.pc, opcode);
                 }
             }
         }

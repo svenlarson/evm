@@ -257,6 +257,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     functionCloneTree[0].name === 'RETURN' &&
                     functionCloneTree[0].items.every((item: any) => item.name === 'MappingLoad')
                 ) {
+                    // the new function only returns something from the mapping
                     functionCloneTree[0].items.forEach((item: any) => {
                         const fullFunction = (functionHashes as any)[jumpCondition.hash];
                         state.mappings[item.location].name = fullFunction.split('(')[0];
@@ -278,6 +279,7 @@ export default (opcode: Opcode, state: EVM): void => {
                         state.functions[jumpCondition.hash].items[0].items[0].location
                     )
                 ) {
+                    // the function is a public getter for a variable from storage
                     if (
                         !(
                             state.functions[jumpCondition.hash].items[0].items[0].location in
@@ -362,6 +364,7 @@ export default (opcode: Opcode, state: EVM): void => {
                             falseCloneTree[0].items.length === 0)) ||
                     falseCloneTree[0].name === 'INVALID'
                 ) {
+                    // the 'false' condition will do a revert
                     if (
                         jumpCondition.name === 'CALL' &&
                         BigNumber.isInstance(jumpCondition.memoryLength) &&
@@ -373,10 +376,12 @@ export default (opcode: Opcode, state: EVM): void => {
                         BigNumber.isInstance(jumpCondition.gas.right) &&
                         jumpCondition.gas.right.equals(2300)
                     ) {
+                        // not sure when this happens
                         jumpCondition.throwOnFail = true;
                         state.instructions.push(jumpCondition);
                         state.instructions.push(...trueCloneTree);
                     } else {
+                        // but this case is a simple require(..)
                         state.instructions.push(new REQUIRE(jumpCondition));
                         state.instructions.push(...trueCloneTree);
                     }
