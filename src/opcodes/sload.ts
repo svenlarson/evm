@@ -20,23 +20,30 @@ export class MappingLoad {
     readonly type?: string;
     readonly wrapped: boolean;
     readonly location: any;
-    readonly count: any;
     readonly items: any;
     readonly structlocation?: any;
     readonly mappings: any;
+    readonly mappingLocation: any;
 
-    constructor(mappings: any, location: any, items: any, count: any, structlocation?: any) {
+    constructor(
+        mappings: any,
+        location: any,
+        items: any,
+        mappingLocation: any,
+        structlocation?: any
+    ) {
         this.name = 'MappingLoad';
         this.wrapped = false;
         this.location = location;
-        this.count = count;
+        this.mappingLocation = mappingLocation;
         this.items = items;
         this.structlocation = structlocation;
         this.mappings = mappings;
     }
 
     toString() {
-        let mappingName = 'mapping' + (this.count + 1);
+        const count = Object.keys(this.mappings()).indexOf(this.mappingLocation.toString());
+        let mappingName = 'mapping' + (count + 1);
         if (this.location in this.mappings() && this.mappings()[this.location].name) {
             mappingName = this.mappings()[this.location].name;
         }
@@ -110,7 +117,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     () => state.mappings,
                     mappingLocation,
                     mappingParts,
-                    Object.keys(state.mappings).indexOf(mappingLocation.toString())
+                    mappingLocation
                 )
             );
         } else {
@@ -143,7 +150,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     () => state.mappings,
                     mappingLocation,
                     mappingParts,
-                    Object.keys(state.mappings).indexOf(mappingLocation.toString()),
+                    mappingLocation,
                     storeLocation.right
                 )
             );
@@ -177,7 +184,7 @@ export default (opcode: Opcode, state: EVM): void => {
                     () => state.mappings,
                     mappingLocation,
                     mappingParts,
-                    Object.keys(state.mappings).indexOf(mappingLocation.toString()),
+                    mappingLocation,
                     storeLocation.left
                 )
             );
