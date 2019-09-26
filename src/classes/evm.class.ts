@@ -197,9 +197,20 @@ export default class EVM {
         if (opcode !== undefined) {
             fs.appendFileSync(logname, '==========\n');
         }
-        fs.appendFileSync(logname, 'Stack: ' + util.format(this.stack) + '\n');
-        fs.appendFileSync(logname, 'Instructions: ' + util.format(this.instructions) + '\n');
-        fs.appendFileSync(logname, 'Memory: ' + util.format(this.memory) + '\n');
+        fs.appendFileSync(
+            logname,
+            'Stack: ' + util.inspect(this.stack, { showHidden: false, depth: null }) + '\n'
+        );
+        fs.appendFileSync(
+            logname,
+            'Instructions: ' +
+                util.inspect(this.instructions, { showHidden: false, depth: null }) +
+                '\n'
+        );
+        fs.appendFileSync(
+            logname,
+            'Memory: ' + util.inspect(this.memory, { showHidden: false, depth: null }) + '\n'
+        );
         if (opcode !== undefined) {
             fs.appendFileSync(
                 logname,
@@ -235,7 +246,7 @@ export default class EVM {
                     (opcodeFunctions as any)[opcode.name](opcode, this);
                 }
                 if (this.logdirectory) {
-                    this.log(this.pc, opcode);
+                    this.log(this.pc);
                 }
             }
         }

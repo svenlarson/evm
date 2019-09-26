@@ -20,7 +20,7 @@ glob('examples/data/*bin', {}, (er: any, files: any) => {
         fs.writeFile(logdir + 'log.txt', '', {}, err => {});
 
         const evm = new EVM(data);
-        evm.logdirectory = logdir;
+        // evm.logdirectory = logdir;
         const decompiled = evm.decompile();
 
         // tslint:disable-next-line: no-empty
