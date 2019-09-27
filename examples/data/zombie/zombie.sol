@@ -1,5 +1,5 @@
 mapping (unknown => unknown) mapping1;
-mapping (unknown => unknown) mapping2;
+mapping (address => unknown) mapping2;
 
 unknown var1;
 

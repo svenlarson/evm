@@ -1,5 +1,5 @@
 mapping (unknown => unknown) mapping1;
-mapping (unknown => unknown) mapping2;
+mapping (address => unknown) mapping2;
 
 function 16356159() public {
     mapping1[msg.sender] += 1;
