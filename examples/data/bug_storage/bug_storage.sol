@@ -2,7 +2,7 @@ mapping (unknown => unknown) mapping1;
 mapping (address => unknown) mapping2;
 
 function 16356159() public {
-    mapping1[msg.sender] += 1;
+    mapping2[msg.sender] += 1;
     return;
 }
 

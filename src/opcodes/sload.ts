@@ -23,26 +23,18 @@ export class MappingLoad {
     readonly items: any;
     readonly structlocation?: any;
     readonly mappings: any;
-    readonly mappingLocation: any;
 
-    constructor(
-        mappings: any,
-        location: any,
-        items: any,
-        mappingLocation: any,
-        structlocation?: any
-    ) {
+    constructor(mappings: any, location: any, items: any, structlocation?: any) {
         this.name = 'MappingLoad';
         this.wrapped = false;
+        this.mappings = mappings;
         this.location = location;
-        this.mappingLocation = mappingLocation;
         this.items = items;
         this.structlocation = structlocation;
-        this.mappings = mappings;
     }
 
     toString() {
-        const count = Object.keys(this.mappings()).indexOf(this.mappingLocation.toString());
+        const count = Object.keys(this.mappings()).indexOf(this.location.toString());
         let mappingName = 'mapping' + (count + 1);
         if (this.location in this.mappings() && this.mappings()[this.location].name) {
             mappingName = this.mappings()[this.location].name;
@@ -112,14 +104,7 @@ export default (opcode: Opcode, state: EVM): void => {
                 };
             }
             state.mappings[mappingLocation].keys.push(mappingParts);
-            state.stack.push(
-                new MappingLoad(
-                    () => state.mappings,
-                    mappingLocation,
-                    mappingParts,
-                    mappingLocation
-                )
-            );
+            state.stack.push(new MappingLoad(() => state.mappings, mappingLocation, mappingParts));
         } else {
             state.stack.push(new SLOAD(storeLocation, () => state.variables));
         }
@@ -150,7 +135,6 @@ export default (opcode: Opcode, state: EVM): void => {
                     () => state.mappings,
                     mappingLocation,
                     mappingParts,
-                    mappingLocation,
                     storeLocation.right
                 )
             );
@@ -184,7 +168,6 @@ export default (opcode: Opcode, state: EVM): void => {
                     () => state.mappings,
                     mappingLocation,
                     mappingParts,
-                    mappingLocation,
                     storeLocation.left
                 )
             );
